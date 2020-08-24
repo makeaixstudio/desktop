@@ -1,3 +1,4 @@
+name: Package AIX Studio Desktop
 on:
   push:
     branches:
@@ -6,6 +7,7 @@ jobs:
   publishdmg:
     name: Publish DMG
     runs-on: macOS-latest
+    if: "contains(toJSON(github.event.commits.*.message), '[package]')"
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2.3.1
@@ -25,6 +27,7 @@ jobs:
   publishexe:
     name: Publish EXE
     runs-on: windows-latest
+    if: "contains(toJSON(github.event.commits.*.message), '[package]')"	
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2.3.1
