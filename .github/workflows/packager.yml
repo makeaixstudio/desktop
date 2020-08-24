@@ -22,7 +22,7 @@ jobs:
           npm install macos-alias
           npm install nan
           yarn
-          yarn publish
+          yarn run publish
   publishexe:
     name: Publish EXE
     runs-on: windows-latest
@@ -39,4 +39,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           yarn
-          yarn publish
+          yarn run publish
