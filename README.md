@@ -1,0 +1,2 @@
+# AIX Studio Desktop
+This is where AIX Studio 2 Desktop builds are created. The Releases section of this repository hosts built files. Pushes to master will trigger a build on GitHub Actions. This is NOT where most AIX Studio source code is; that's in the `plugins` repo. The build configuration is manually synchronized with the `aixstudio` repo.
