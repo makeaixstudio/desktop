@@ -8,6 +8,7 @@
     "type": "git",
     "url": "https://github.com/makeaixstudio/server.git"
   },
+  "author": "AIX Studio Contributors",
   "dependencies": {
     "@theia/callhierarchy": "next",
     "@theia/file-search": "next",
