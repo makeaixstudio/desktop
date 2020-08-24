@@ -3,6 +3,7 @@
   "productName": "AIX Studio",
   "description": "The most advanced IDE for App Inventor extension development.",
   "version": "2.0.1",
+  "main": "src-gen/frontend/electron-main.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/makeaixstudio/server.git"
