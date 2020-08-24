@@ -1,0 +1,120 @@
+{
+  "name": "aixstudiodesktop",
+  "productName": "AIX Studio",
+  "description": "The most advanced IDE for App Inventor extension development.",
+  "version": "2.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/makeaixstudio/server.git"
+  },
+  "dependencies": {
+    "@theia/callhierarchy": "next",
+    "@theia/file-search": "next",
+    "@theia/git": "next",
+    "@theia/markers": "next",
+    "@theia/messages": "next",
+    "@theia/mini-browser": "next",
+    "@theia/navigator": "next",
+    "@theia/outline-view": "next",
+    "@theia/plugin-ext-vscode": "next",
+    "@theia/preferences": "next",
+    "@theia/preview": "next",
+    "@theia/search-in-workspace": "next",
+    "@theia/terminal": "next"
+  },
+  "devDependencies": {
+    "@theia/cli": "next",
+    "electron": "^8.2.0",
+    "@electron-forge/cli": "^6.0.0-beta.34",
+    "@electron-forge/maker-deb": "^6.0.0-beta.34",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.34",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.34",
+    "@electron-forge/maker-dmg": "^6.0.0-beta.52",
+    "@electron-forge/publisher-github": "^6.0.0-beta.52"
+  },
+  "scripts": {
+    "prepare": "yarn run clean && yarn build && yarn run download:plugins",
+    "clean": "theia clean",
+    "build": "theia build --mode production",
+    "download:plugins": "theia download:plugins",
+    "publish": "yarn run build && electron-forge publish",
+    "start": "electron-forge start",
+    "make": "electron-forge make",
+    "package": "electron-forge package",
+    "lint": "echo \"No linting configured\""
+  },
+  "theia": {
+    "target": "electron",
+    "frontend": {
+      "config": {
+        "applicationName": "AIX Studio",
+        "defaultTheme": "Tomorrow Night Blue",
+        "preferences": {
+          "workbench.colorTheme": "Tomorrow Night Blue" 
+        }
+      }
+    }
+  },
+  "theiaPluginsDir": "plugins",
+  "theiaPlugins": {
+    "vscode-builtin-json": "https://github.com/theia-ide/vscode-builtin-extensions/releases/download/v1.39.1-prel/json-1.39.1-prel.vsix",
+    "vscode-builtin-markdown": "https://github.com/theia-ide/vscode-builtin-extensions/releases/download/v1.39.1-prel/markdown-1.39.1-prel.vsix",
+    "vscode-builtin-java": "https://github.com/theia-ide/vscode-builtin-extensions/releases/download/v1.39.1-prel/java-1.39.1-prel.vsix",
+    "vscode-builtin-tomorrownightblue": "https://github.com/theia-ide/vscode-builtin-extensions/releases/download/v1.39.1-prel/theme-tomorrow-night-blue-1.39.1-prel.vsix",
+    "aix-actions": "https://github.com/makeaixstudio/plugins/releases/download/v2.0.2/aix-actions.vsix",
+    "javalang": "https://github.com/makeaixstudio/plugins/releases/download/v2.0.2/javalang.vsix",
+    "welcomescreen": "https://github.com/makeaixstudio/plugins/releases/download/v2.0.2/welcomescreen.vsix"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "icon": "icon.icns"
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "iconUrl": "https://peppericons.vercel.app/icon.ico",
+            "setupIcon": "icon.ico",
+            "loadingGif": "installer.gif"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-dmg",
+          "config": {
+            "icon": "icon.icns"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {
+            "options": {
+              "icon": "icon.png"
+            }
+          }
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {
+            "options": {
+              "icon": "icon.png"
+            }
+          }
+        }
+      ],
+      "publishers": [
+        {
+          "name": "@electron-forge/publisher-github",
+          "config": {
+            "repository": {
+              "owner": "makeaixstudio",
+              "name": "desktop"
+            },
+            "prerelease": false,
+            "draft": true
+          }
+        }
+      ]
+    }
+  }
+}
