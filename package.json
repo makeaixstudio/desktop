@@ -22,7 +22,8 @@
     "@theia/preferences": "next",
     "@theia/preview": "next",
     "@theia/search-in-workspace": "next",
-    "@theia/terminal": "next"
+    "@theia/terminal": "next",
+    "fix-path": "^3.0.0"
   },
   "devDependencies": {
     "@theia/cli": "next",
@@ -103,6 +104,9 @@
               "icon": "icon.png"
             }
           }
+        },
+        {
+          name: '@electron-forge/maker-zip'
         }
       ],
       "publishers": [
