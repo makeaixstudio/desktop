@@ -41,7 +41,7 @@
   "scripts": {
     "prepare": "yarn run clean && yarn build && yarn run download:plugins",
     "clean": "theia clean",
-    "build": "theia build --mode production",
+    "build": "theia build --mode production && echo \"require('update-electron-app')();\" >> src-gen/frontend/electron-main.js",
     "download:plugins": "theia download:plugins",
     "publish": "yarn run build && electron-forge publish",
     "start": "electron-forge start",
