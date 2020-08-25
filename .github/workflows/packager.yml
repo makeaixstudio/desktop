@@ -40,3 +40,21 @@ jobs:
         run: |
           yarn
           yarn run publish
+  publishdebandrpm:
+    name: Publish DEB and RPM
+    runs-on: ubuntu-latest
+    if: "contains(toJSON(github.event.commits.*.message), '[package]')"	
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2.3.1
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+      - name: Install and publish
+        env:
+          GITHUB_TOKEN: ${{ secrets.AIX_BOT }}
+        run: |
+          sudo apt-get -y install fakeroot dpkg rpm
+          yarn
+          yarn run publish
