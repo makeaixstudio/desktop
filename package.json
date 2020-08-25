@@ -23,7 +23,8 @@
     "@theia/preview": "next",
     "@theia/search-in-workspace": "next",
     "@theia/terminal": "next",
-    "fix-path": "^3.0.0"
+    "fix-path": "^3.0.0",
+    "electron-store": "^6.0.0"
   },
   "devDependencies": {
     "@theia/cli": "next",
