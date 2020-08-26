@@ -1,0 +1,9 @@
+blank_issues_enabled: false
+
+contact_links:
+  - name: Question about AIX Studio
+    url: https://aix.flarum.cloud
+    about: Ask questions about AIX Studio on our forum
+  - name: Request that your snippet/template be added
+    url: https://github.com/makeaixstudio/bytes/issues/new
+    about: Request snippets and templates to be added to AIX Bytes here
