@@ -43,7 +43,7 @@
     "publishmac": "yarn run build && electron-builder build -m -p always",
     "publishwindows": "yarn run build && electron-builder build -w -p always",
     "publishlinux": "yarn run build && electron-builder build -l -p always",
-    "publish": "yarn run build && electron-builder build -p always",
+    "publish": "yarn run build && electron-builder build -mwl -p always",
     "start": "electron .",
     "package": "electron-builder build -mwl",
     "postinstall": "electron-builder install-app-deps",
