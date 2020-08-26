@@ -18,6 +18,7 @@ jobs:
       - name: Install and publish
         env:
           GH_TOKEN: ${{ secrets.AIX_BOT }}
+          GITHUB_TOKEN: ${{ secrets.AIX_BOT }}
         run: |
           npm install macos-alias
           npm install nan
@@ -37,6 +38,7 @@ jobs:
       - name: Install and publish
         env:
           GH_TOKEN: ${{ secrets.AIX_BOT }}
+          GITHUB_TOKEN: ${{ secrets.AIX_BOT }}
         run: |
           yarn
           yarn run publishwindows
@@ -54,6 +56,7 @@ jobs:
       - name: Install and publish
         env:
           GH_TOKEN: ${{ secrets.AIX_BOT }}
+          GITHUB_TOKEN: ${{ secrets.AIX_BOT }}
         run: |
           sudo apt-get -y install fakeroot dpkg rpm
           yarn
