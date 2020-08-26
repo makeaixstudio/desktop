@@ -135,10 +135,12 @@
           "arch": [
             "x64",
             "ia32"
-          ],
-          "publish": ["github"]
+          ]
         }
       ]
+    },
+    "snap": {
+      "publish": "github"
     }
   }
 }
