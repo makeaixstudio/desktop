@@ -43,7 +43,7 @@ jobs:
           yarn
           yarn run publishwindows
   publishdebandrpm:
-    name: Publish DEB and RPM
+    name: Publish AppImage
     runs-on: ubuntu-latest
     if: "contains(toJSON(github.event.commits.*.message), '[package]')"	
     steps:
@@ -53,13 +53,11 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '10.x'
-      - name: Snapcraft Action
-        uses: samuelmeuli/action-snapcraft@v1.1.2
       - name: Install and publish
         env:
           GH_TOKEN: ${{ secrets.AIX_BOT }}
           GITHUB_TOKEN: ${{ secrets.AIX_BOT }}
         run: |
-          sudo apt-get -y install gcc-multilib g++-multilib fakeroot dpkg rpm
+          sudo apt-get -y install fakeroot dpkg rpm
           yarn
           yarn run publishlinux
