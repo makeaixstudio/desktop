@@ -6,4 +6,4 @@ contact_links:
     about: Ask questions about AIX Studio on our forum
   - name: Request that your snippet/template be added
     url: https://github.com/makeaixstudio/bytes/issues/new
-    about: Request snippets and templates to be added to AIX Bytes here
+    about: Request snippets and templates to be added to AIX Bytes in the Bytes issues area
