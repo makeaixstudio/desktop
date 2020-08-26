@@ -22,7 +22,7 @@ jobs:
           npm install macos-alias
           npm install nan
           yarn
-          yarn run publish
+          yarn run publish-mac
   publishexe:
     name: Publish EXE
     runs-on: windows-latest
@@ -39,7 +39,7 @@ jobs:
           GH_TOKEN: ${{ secrets.AIX_BOT }}
         run: |
           yarn
-          yarn run publish
+          yarn run publish-windows
   publishdebandrpm:
     name: Publish DEB and RPM
     runs-on: ubuntu-latest
@@ -57,4 +57,4 @@ jobs:
         run: |
           sudo apt-get -y install fakeroot dpkg rpm
           yarn
-          yarn run publish
+          yarn run publish-linux
