@@ -1,6 +1,6 @@
 {
   "name": "aixstudiodesktop",
-  "productName": "AIXStudio",
+  "productName": "aixstudiodesktop",
   "description": "The most advanced IDE for App Inventor extension development.",
   "version": "2.0.2",
   "main": "src-gen/frontend/electron-main.js",
