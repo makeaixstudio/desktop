@@ -4,8 +4,8 @@ on:
     branches:
       - master
 jobs:
-  buildandpublish:
-    name: Build and publish
+  publishdmg:
+    name: Publish DMG
     runs-on: macOS-latest
     if: "contains(toJSON(github.event.commits.*.message), '[package]')"
     steps:
@@ -23,4 +23,41 @@ jobs:
           npm install macos-alias
           npm install nan
           yarn
-          yarn run publish
+          yarn run publishmac
+  publishexe:
+    name: Publish EXE
+    runs-on: windows-latest
+    if: "contains(toJSON(github.event.commits.*.message), '[package]')"	
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2.3.1
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+      - name: Install and publish
+        env:
+          GH_TOKEN: ${{ secrets.AIX_BOT }}
+          GITHUB_TOKEN: ${{ secrets.AIX_BOT }}
+        run: |
+          yarn
+          yarn run publishwindows
+  publishappimage:
+    name: Publish AppImage
+    runs-on: ubuntu-latest
+    if: "contains(toJSON(github.event.commits.*.message), '[package]')"	
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2.3.1
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+      - name: Install and publish
+        env:
+          GH_TOKEN: ${{ secrets.AIX_BOT }}
+          GITHUB_TOKEN: ${{ secrets.AIX_BOT }}
+        run: |
+          sudo apt-get -y install gcc-multilib g++-multilib fakeroot dpkg rpm
+          yarn
+          yarn run publishlinux
