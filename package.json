@@ -2,7 +2,7 @@
   "name": "aixstudiodesktop",
   "displayName": "AIX Studio",
   "description": "The most advanced IDE for App Inventor extension development.",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "main": "src-gen/frontend/electron-main.js",
   "repository": {
     "type": "git",
