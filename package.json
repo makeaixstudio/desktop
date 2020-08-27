@@ -6,7 +6,7 @@
   "main": "src-gen/frontend/electron-main.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/makeaixstudio/desktop.git"
+    "url": "https://github.com/makeaixstudio/desktop.git"
   },
   "author": {
     "name": "AIX Studio Contributors",
