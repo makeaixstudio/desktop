@@ -2,7 +2,7 @@
   "name": "aixstudiodesktop",
   "displayName": "AIX Studio",
   "description": "The most advanced IDE for App Inventor extension development.",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "main": "src-gen/frontend/electron-main.js",
   "repository": {
     "type": "git",
@@ -40,13 +40,13 @@
   "scripts": {
     "prepare": "yarn run build && yarn run download:plugins",
     "clean": "theia clean",
-    "build": "theia build --mode production && echo \"require('update-electron-app')();\" >> src-gen/frontend/electron-main.js",
+    "build": "yarn theia rebuild:electron && theia build --mode production && echo \"require('update-electron-app')();\" >> src-gen/frontend/electron-main.js",
     "download:plugins": "theia download:plugins",
     "publishmac": "yarn run prepare && electron-builder build -m -p always",
     "publishwindows": "yarn run prepare && electron-builder build -w -p always",
     "publishlinux": "yarn run prepare && electron-builder build -l -p always",
     "publish": "yarn run prepare && electron-builder build -mwl -p always",
-    "start": "electron .",
+    "start": "yarn theia start --plugins=local-dir:./plugins",
     "package": "electron-builder build -mwl",
     "postinstall": "electron-builder install-app-deps",
     "lint": "echo \"No linting configured\""
