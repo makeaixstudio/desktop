@@ -25,7 +25,7 @@
     "@theia/preferences": "next",
     "@theia/preview": "next",
     "@theia/search-in-workspace": "next",
-    "@theia/terminal": "next"
+    "@theia/terminal": "next",
     "@theia/electron": "latest",
     "update-electron-app": "^1.5.0"
   },
