@@ -37,7 +37,7 @@
   "scripts": {
     "prepare": "yarn run build && yarn run download:plugins",
     "clean": "theia clean",
-    "build": "yarn theia rebuild:electron && theia build --mode production && echo \"require('update-electron-app')();\" >> src-gen/frontend/electron-main.js",
+    "build": "yarn theia rebuild:electron && theia build --mode production && echo -e \"require('update-electron-app')();\" >> src-gen/frontend/electron-main.js",
     "download:plugins": "theia download:plugins",
     "publishmac": "yarn run prepare && electron-builder build -m -p always",
     "publishwindows": "yarn run prepare && electron-builder build -w -p always",
