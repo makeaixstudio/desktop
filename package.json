@@ -60,7 +60,7 @@
       }
     }
   },
-  "theiaPluginsDir": "plugins",
+  "theiaPluginsDir": "../../plugins",
   "theiaPlugins": {
     "vscode-builtin-json": "https://github.com/theia-ide/vscode-builtin-extensions/releases/download/v1.39.1-prel/json-1.39.1-prel.vsix",
     "vscode-builtin-markdown": "https://github.com/theia-ide/vscode-builtin-extensions/releases/download/v1.39.1-prel/markdown-1.39.1-prel.vsix",
