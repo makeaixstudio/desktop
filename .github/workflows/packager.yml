@@ -58,6 +58,7 @@ jobs:
           GH_TOKEN: ${{ secrets.AIX_BOT }}
           GITHUB_TOKEN: ${{ secrets.AIX_BOT }}
         run: |
+          sudo apt-get update
           sudo apt-get -y install gcc-multilib g++-multilib fakeroot dpkg rpm
           yarn
           yarn run publishlinux
