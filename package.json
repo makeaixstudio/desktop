@@ -43,7 +43,7 @@
     "publishwindows": "yarn run prepare && electron-builder build -w -p always && echo require('update-electron-app')(); >> src-gen/frontend/electron-main.js",
     "publishlinux": "yarn run prepare && electron-builder build -l -p always && echo \"require('update-electron-app')();\" >> src-gen/frontend/electron-main.js",
     "publish": "yarn run prepare && electron-builder build -mwl -p always",
-    "start": "yarn theia start --plugins=local-dir:./plugins",
+    "start": "yarn theia start --plugins=local-dir:../../plugins",
     "package": "electron-builder build -mwl",
     "postinstall": "electron-builder install-app-deps",
     "lint": "echo \"No linting configured\""
